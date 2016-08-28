@@ -1019,6 +1019,16 @@ class httpretty(HttpBaseClass):
                      responses=None, match_querystring=False,
                      priority=0,
                      **headers):
+        """
+        Registers a URI string to be handled by HTTPretty 
+
+        :param adding_headers:  Headers to add to the response.
+        :param forcing_headers: Headers forced to response (override internal ones)
+        :param status: HTTP status code to return (default 200)
+        :param responses: response text to return or function to call for response
+        :match_querystring: require query string as part of match - default false
+        :return: List of feature objects.
+        """
 
         uri_is_string = isinstance(uri, basestring)
 
