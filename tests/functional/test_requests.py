@@ -513,9 +513,9 @@ def test_httpretty_should_respect_matcher_priority():
         body='low priority',
         priority=0,
     )
-    response1 = requests.get('http://api.yipit.com/v1/')
-    response2 = requests.get('http://api.yipit.com/v2/')
+    response = requests.get('http://api.yipit.com/v1/')
     expect(response1.text).to.equal('high priority')
+    response = requests.get('http://api.yipit.com/v2/')
     expect(response1.text).to.equal('low priority')
 
 @httprettified
